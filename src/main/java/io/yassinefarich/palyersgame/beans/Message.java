@@ -1,4 +1,4 @@
-package io.yassinefarich.test.beans;
+package io.yassinefarich.palyersgame.beans;
 
 public class Message {
     private String message;
@@ -51,5 +51,9 @@ public class Message {
 
     public Player getEmitter() {
         return emitter;
+    }
+
+    public String print() {
+        return this.emitter.getName() + "_" + this.message + "_" + this.timeToLive;
     }
 }

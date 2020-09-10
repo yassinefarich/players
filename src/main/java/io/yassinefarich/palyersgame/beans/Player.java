@@ -1,6 +1,6 @@
-package io.yassinefarich.test.beans;
+package io.yassinefarich.palyersgame.beans;
 
-import io.yassinefarich.test.broker.MessageBroker;
+import io.yassinefarich.palyersgame.messagebrokers.MessageBroker;
 
 import java.util.function.Consumer;
 import java.util.function.Function;

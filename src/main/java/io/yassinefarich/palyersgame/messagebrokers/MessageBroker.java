@@ -1,9 +1,8 @@
-package io.yassinefarich.test.broker;
+package io.yassinefarich.palyersgame.messagebrokers;
 
-import io.yassinefarich.test.beans.Message;
-import io.yassinefarich.test.beans.Player;
+import io.yassinefarich.palyersgame.beans.Message;
+import io.yassinefarich.palyersgame.beans.Player;
 
-import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public interface MessageBroker {
