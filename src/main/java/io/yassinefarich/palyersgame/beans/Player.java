@@ -8,7 +8,6 @@ import java.util.function.Function;
 public class Player {
     private String name;
     private MessageBroker messageBroker;
-    private Consumer<Message> messagehandler;
 
     public String getName() {
         return name;
@@ -18,7 +17,7 @@ public class Player {
         this.messageBroker.send(this, p2, message);
     }
 
-    private void registerMessageBroker(MessageBroker messageBroker) {
+    private void registerMessageBroker(MessageBroker messageBroker, Consumer<Message> messagehandler) {
         this.messageBroker = messageBroker;
         messageBroker.subscribe(this, messagehandler);
     }
@@ -55,8 +54,7 @@ public class Player {
             Player player = new Player();
             player.name = this.playerName;
             if (this.messagehandler != null) {
-                player.messagehandler = this.messagehandler.apply(player);
-                player.registerMessageBroker(this.messageBroker);
+                player.registerMessageBroker(this.messageBroker, this.messagehandler.apply(player));
             }
             return player;
         }

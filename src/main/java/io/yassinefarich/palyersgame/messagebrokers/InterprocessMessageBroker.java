@@ -3,7 +3,6 @@ package io.yassinefarich.palyersgame.messagebrokers;
 import io.yassinefarich.palyersgame.beans.Message;
 import io.yassinefarich.palyersgame.beans.Player;
 
-import java.io.File;
 import java.io.RandomAccessFile;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
@@ -16,8 +15,8 @@ public class InterprocessMessageBroker implements MessageBroker {
     private static final String MAPPED_FILE = "/tmp/memoryMappedFile";
     private static final byte EOF = 0x1a;
     private static final int BUFFER_SIZE = 10000; //chars
-    public static final String OUTGOING = "-->";
-    public static final String INCOMING = "<--";
+    private static final String OUTGOING = "-->";
+    private static final String INCOMING = "<--";
 
     private int offset = 0;
     private boolean stillWaitingForTheLastMessgae = true;
